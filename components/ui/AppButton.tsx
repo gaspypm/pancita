@@ -17,9 +17,9 @@ const variantClasses = {
 };
 
 const sizeClasses = {
-  sm: "min-h-10 px-4 text-sm",
-  md: "min-h-12 px-5 text-[15px]",
-  lg: "min-h-14 px-6 text-base",
+  sm: "min-h-[44px] px-5 text-sm",
+  md: "min-h-[56px] px-6 text-[16px]",
+  lg: "min-h-[64px] px-8 text-[18px]",
 };
 
 export function AppButton({

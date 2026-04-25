@@ -21,10 +21,10 @@ export default function HomePage() {
   const showToast = useAppStore((state) => state.showToast);
 
   return (
-    <MobileShell className="bg-[#fff4df]">
+    <MobileShell className="bg-[var(--pancita-cream)]">
       <header className="mb-4 flex items-center justify-between gap-3">
         <div>
-          <p className="text-[27px] font-black leading-tight text-[#3c422c]">
+          <p className="text-[28px] font-black leading-tight text-[var(--pancita-text-dark)]">
             ¡Hola, {user.name}! 👋
           </p>
           <p className="mt-1 text-sm font-bold text-[#8a7d66]">
@@ -60,7 +60,7 @@ export default function HomePage() {
       />
 
       <section className="mb-5">
-        <h2 className="mb-3 text-xl font-black text-[#3d432d]">Resumen del día</h2>
+        <h2 className="mb-3 text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Resumen del día</h2>
         <div className="grid grid-cols-2 gap-3">
           <StatCard
             color="#f0b751"
@@ -100,7 +100,7 @@ export default function HomePage() {
       <AppCard>
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-black text-[#3d432d]">
+            <h2 className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">
               Resumen de la semana
             </h2>
             <p className="mt-1 text-sm font-bold text-[#81745f]">

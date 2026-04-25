@@ -27,7 +27,7 @@ export default function RecipeStepsPage() {
 
   if (!recipe || recipe.steps.length === 0) {
     return (
-      <MobileShell className="bg-[#fff7e9]">
+      <MobileShell className="bg-[var(--pancita-cream)]">
         <AppHeader showBack title="Receta no disponible" />
         <AppCard className="text-center">
           <p className="text-sm font-bold leading-relaxed text-[#81745f]">
@@ -61,7 +61,7 @@ export default function RecipeStepsPage() {
   }
 
   return (
-    <MobileShell className="bg-[#fff7e9]">
+    <MobileShell className="bg-[var(--pancita-cream)]">
       <AppHeader showBack title={recipe.title} />
 
       <RecipeStepProgress currentStep={stepIndex + 1} totalSteps={totalSteps} />
@@ -91,7 +91,7 @@ export default function RecipeStepsPage() {
           <p className="mb-2 text-sm font-black uppercase text-[#8b806b]">
             Paso {stepIndex + 1} de {totalSteps}
           </p>
-          <h1 className="text-[28px] font-black leading-tight text-[#39402b]">
+          <h1 className="text-[28px] font-black leading-tight text-[var(--pancita-text-dark)]">
             {currentStep.title}
           </h1>
           <p className="mt-4 text-lg font-bold leading-relaxed text-[#6f624f]">
@@ -108,8 +108,9 @@ export default function RecipeStepsPage() {
               </p>
             </AppCard>
           ) : (
-            <AppCard className="mt-5 text-center">
-              <p className="text-xl font-black text-[#3d432d]">{recipe.title}</p>
+            <AppCard className="mt-5 text-center bg-[var(--pancita-lavender)] ring-[var(--pancita-lavender)] shadow-[0_16px_40px_rgba(243,234,251,0.5)]">
+              <p className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">¡Receta completada!</p>
+              <p className="mt-1 text-[16px] font-black text-[var(--pancita-text-dark)]">{recipe.title}</p>
               <p className="mt-2 text-sm font-bold leading-relaxed text-[#756852]">
                 Hiciste un plato saludable y delicioso 💚
               </p>

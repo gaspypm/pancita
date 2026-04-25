@@ -48,7 +48,7 @@ export default function DiarioPage() {
   }
 
   return (
-    <MobileShell className="bg-[#eef6df]">
+    <MobileShell className="bg-[var(--pancita-green-light)]">
       <AppHeader
         action={
           <button
@@ -76,7 +76,7 @@ export default function DiarioPage() {
       <div className="mt-5 flex min-h-12 items-center gap-3 rounded-full bg-white/86 px-4 shadow-[0_12px_26px_rgba(72,90,52,0.09)] ring-1 ring-white/70">
         <Search className="text-[#7a8758]" size={19} />
         <input
-          className="min-w-0 flex-1 bg-transparent text-sm font-bold text-[#3d432d] outline-none placeholder:text-[#9e967f]"
+          className="min-w-0 flex-1 bg-transparent text-[16px] font-bold text-[var(--pancita-text-dark)] outline-none placeholder:text-[#9e967f]"
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Buscar comida..."
           value={query}
@@ -85,8 +85,8 @@ export default function DiarioPage() {
 
       <section className="mt-5">
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-lg font-black text-[#3d432d]">Comidas</h2>
-          <span className="rounded-full bg-white/72 px-3 py-1 text-xs font-black text-[#77835a]">
+          <h2 className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Comidas</h2>
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-[var(--pancita-olive)]">
             {filteredFoods.length}
           </span>
         </div>
@@ -114,7 +114,7 @@ export default function DiarioPage() {
       </section>
 
       <section className="mt-5">
-        <h2 className="mb-3 text-lg font-black text-[#3d432d]">Hoy</h2>
+        <h2 className="mb-3 text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Hoy</h2>
         {diaryEntries.length === 0 ? (
           <AppCard className="text-center">
             <p className="text-sm font-black text-[#3d432d]">
@@ -135,10 +135,10 @@ export default function DiarioPage() {
                   {entry.emoji}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-black text-[#3d432d]">
+                  <p className="truncate text-[16px] font-black text-[var(--pancita-text-dark)]">
                     {entry.name}
                   </p>
-                  <p className="text-xs font-bold text-[#8a806b]">
+                  <p className="text-[13px] font-bold text-[var(--pancita-text-muted)]">
                     {formatNumber(entry.nutrition.kcal)} kcal · +{entry.points} puntos
                   </p>
                 </div>

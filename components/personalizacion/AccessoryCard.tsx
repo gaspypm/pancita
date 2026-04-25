@@ -20,19 +20,19 @@ export function AccessoryCard({
   return (
     <button
       className={cn(
-        "relative min-h-[130px] rounded-[26px] bg-white/84 p-3 text-left shadow-[0_14px_30px_rgba(91,57,75,0.1)] ring-1 ring-white/70 transition active:scale-[0.98]",
+        "relative min-h-[140px] rounded-[32px] bg-white p-4 text-left shadow-[0_16px_40px_rgba(91,57,75,0.08)] ring-1 ring-white/60 transition active:scale-[0.98]",
         equipped && "bg-[#fff1f5] ring-[#ef9cb5]",
       )}
       onClick={() => onSelect(accessory)}
       type="button"
     >
       <span
-        className="mb-3 grid size-12 place-items-center rounded-2xl text-2xl"
+        className="mb-3 grid size-[52px] place-items-center rounded-full text-[28px]"
         style={{ backgroundColor: `${accessory.color}22` }}
       >
         {accessory.icon}
       </span>
-      <span className="block text-sm font-black leading-tight text-[#3e432d]">
+      <span className="block text-[15px] font-black leading-tight text-[var(--pancita-text-dark)]">
         {accessory.name}
       </span>
       <span className="mt-1 block text-xs font-black text-[#a47a2e]">

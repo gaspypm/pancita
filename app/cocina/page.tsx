@@ -43,7 +43,7 @@ function CocinaContent() {
   );
 
   return (
-    <MobileShell className="bg-[#f2edf9]">
+    <MobileShell className="bg-[var(--pancita-lavender)]">
       <AppHeader
         action={
           <button
@@ -64,7 +64,7 @@ function CocinaContent() {
           <Search className="text-[#765c8f]" size={19} />
           <input
             autoFocus
-            className="min-w-0 flex-1 bg-transparent text-sm font-bold text-[#3d432d] outline-none placeholder:text-[#9e967f]"
+            className="min-w-0 flex-1 bg-transparent text-[16px] font-bold text-[var(--pancita-text-dark)] outline-none placeholder:text-[#9e967f]"
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Buscar recetas..."
             value={query}
@@ -81,7 +81,7 @@ function CocinaContent() {
 
       {searchOpen && query ? (
         <section className="space-y-3">
-          <h2 className="text-lg font-black text-[#3d432d]">Resultados</h2>
+          <h2 className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Resultados</h2>
           {visibleRecipes.length > 0 ? (
             visibleRecipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe} />)
           ) : (
@@ -101,7 +101,7 @@ function CocinaContent() {
 
           <section className="mt-6">
             <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-xl font-black text-[#3d432d]">Más recetas</h2>
+              <h2 className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Más recetas</h2>
               <button
                 className="rounded-full bg-white/78 px-4 py-2 text-xs font-black text-[#765c8f] shadow-[0_10px_22px_rgba(93,73,114,0.09)]"
                 onClick={() => setShowAllManual((value) => !value)}
@@ -118,7 +118,7 @@ function CocinaContent() {
           </section>
 
           <section className="mt-6">
-            <h2 className="mb-3 text-xl font-black text-[#3d432d]">Mis recetas</h2>
+            <h2 className="mb-3 text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Mis recetas</h2>
             {myRecipes.length > 0 ? (
               <div className="space-y-3">
                 {myRecipes.map((recipe) => (

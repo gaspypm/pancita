@@ -6,13 +6,13 @@ import { Utensils } from "lucide-react";
 export const FoodDropZone = forwardRef<HTMLDivElement>(function FoodDropZone(_, ref) {
   return (
     <div
-      className="mt-3 rounded-[28px] border-2 border-dashed border-[#a5b96e] bg-[#f5f8e7]/72 px-4 py-5 text-center shadow-[inset_0_0_24px_rgba(122,145,82,0.12)]"
+      className="mt-3 rounded-[32px] border-2 border-dashed border-[var(--pancita-olive)]/40 bg-[var(--pancita-green-light)]/50 px-4 py-6 text-center shadow-[inset_0_0_24px_rgba(122,145,82,0.06)]"
       ref={ref}
     >
-      <div className="mx-auto mb-2 grid size-11 place-items-center rounded-full bg-white text-[#6f7f43]">
+      <div className="mx-auto mb-3 grid size-12 place-items-center rounded-full bg-white text-[var(--pancita-olive)] shadow-sm">
         <Utensils size={20} />
       </div>
-      <p className="text-sm font-black text-[#667549]">
+      <p className="text-[15px] font-black text-[#667549]">
         Arrastrá la comida acá para dármela
       </p>
     </div>

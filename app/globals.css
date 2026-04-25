@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff7e9;
+  --background: #fffaf2;
   --foreground: #3d412d;
-  --pancita-cream: #fff7e9;
-  --pancita-cream-strong: #f8ead8;
+  --pancita-cream: #fffaf2;
+  --pancita-cream-strong: #eadfca;
+  --pancita-card: #ffffff;
   --pancita-olive: #6f7f43;
   --pancita-olive-dark: #4f6030;
+  --pancita-text-dark: #3d412d;
+  --pancita-text-muted: #8b806b;
+  --pancita-green-light: #e8eed1;
+  --pancita-pink-light: #fde8ec;
+  --pancita-lavender: #f3eafb;
   --pancita-yellow: #f5be58;
-  --pancita-pink: #ef9db5;
-  --pancita-lilac: #bca9d8;
 }
 
 @theme inline {
-  --color-background: #fff7e9;
-  --color-foreground: #3d412d;
-  --font-sans: "Geist", "Geist Fallback", "Nunito", "Avenir Next", ui-sans-serif,
-    system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito), "Nunito", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
 }
 
 * {
@@ -26,7 +29,7 @@
 
 html {
   min-height: 100%;
-  background: #eadfca;
+  background: var(--pancita-cream-strong);
   color-scheme: light;
   overscroll-behavior-y: none;
 }
@@ -34,10 +37,9 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background: #eadfca;
+  background: var(--pancita-cream-strong);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), "Avenir Next", ui-sans-serif, system-ui,
-    sans-serif;
+  font-family: var(--font-sans);
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

@@ -93,7 +93,7 @@ export default function ConfiguracionPerfilPage() {
   }
 
   return (
-    <MobileShell className="bg-[#fff7e9]">
+    <MobileShell className="bg-[var(--pancita-cream)]">
       <AppHeader
         action={
           <button
@@ -115,7 +115,7 @@ export default function ConfiguracionPerfilPage() {
             <UserRound size={28} />
           </div>
           <div className="min-w-0">
-            <h2 className="text-xl font-black text-[#3d432d]">{user.name}</h2>
+            <h2 className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">{user.name}</h2>
             <p className="truncate text-sm font-bold text-[#81745f]">{user.email}</p>
             <p className="mt-1 text-xs font-black uppercase text-[#9a8c74]">
               Miembro desde {user.memberSince}
@@ -129,7 +129,7 @@ export default function ConfiguracionPerfilPage() {
           const Icon = row.icon;
           return (
             <button
-              className="flex min-h-[76px] w-full items-center gap-3 rounded-[25px] bg-white/82 p-4 text-left shadow-[0_12px_28px_rgba(80,61,38,0.09)] ring-1 ring-white/72"
+              className="flex min-h-[84px] w-full items-center gap-4 rounded-[32px] bg-white p-4 text-left shadow-[0_12px_28px_rgba(80,61,38,0.06)] ring-1 ring-white/60 active:scale-[0.98] transition"
               key={row.id}
               onClick={() => openRow(row)}
               type="button"
@@ -138,7 +138,7 @@ export default function ConfiguracionPerfilPage() {
                 <Icon size={20} />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-sm font-black text-[#3d432d]">
+                <span className="block text-[16px] font-black text-[var(--pancita-text-dark)]">
                   {row.title}
                 </span>
                 <span className="mt-1 block text-xs font-bold text-[#81745f]">
@@ -153,7 +153,7 @@ export default function ConfiguracionPerfilPage() {
 
       <section className="mt-5 space-y-3">
         <button
-          className="flex min-h-[58px] w-full items-center justify-center gap-2 rounded-full bg-white/84 text-sm font-black text-[#b2573f] shadow-[0_12px_28px_rgba(80,61,38,0.08)]"
+          className="flex min-h-[64px] w-full items-center justify-center gap-2 rounded-full bg-white text-[16px] font-black text-[#b2573f] shadow-[0_12px_28px_rgba(80,61,38,0.06)] active:scale-[0.98] transition"
           onClick={handleLogout}
           type="button"
         >
@@ -161,7 +161,7 @@ export default function ConfiguracionPerfilPage() {
           Cerrar sesión
         </button>
         <button
-          className="flex min-h-[58px] w-full items-center justify-center gap-2 rounded-full bg-[#f8e2dc] text-sm font-black text-[#b24738] ring-1 ring-[#efc5bd]"
+          className="flex min-h-[64px] w-full items-center justify-center gap-2 rounded-full bg-[#f8e2dc] text-[16px] font-black text-[#b24738] ring-1 ring-[#efc5bd] active:scale-[0.98] transition"
           onClick={() => setDeleteOpen(true)}
           type="button"
         >

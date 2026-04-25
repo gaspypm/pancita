@@ -12,7 +12,7 @@ type FoodCardProps = {
 export function FoodCard({ food, onFeed, onDragFeed }: FoodCardProps) {
   return (
     <motion.button
-      className="min-h-[112px] rounded-[25px] bg-white/86 p-3 text-left shadow-[0_12px_28px_rgba(70,57,36,0.09)] ring-1 ring-white/72"
+      className="min-h-[120px] rounded-[32px] bg-white p-4 text-left shadow-[0_16px_40px_rgba(111,127,67,0.08)] ring-1 ring-white/60"
       drag
       dragSnapToOrigin
       onClick={() => onFeed(food.id)}
@@ -20,11 +20,11 @@ export function FoodCard({ food, onFeed, onDragFeed }: FoodCardProps) {
       whileDrag={{ scale: 1.08, rotate: 2, zIndex: 30 }}
       whileTap={{ scale: 0.98 }}
     >
-      <span className="mb-2 grid size-12 place-items-center rounded-2xl bg-[#f3ead7] text-2xl">
+      <span className="mb-2 grid size-12 place-items-center rounded-full bg-[var(--pancita-cream)] text-[26px]">
         {food.emoji}
       </span>
-      <span className="block text-sm font-black text-[#3e432d]">{food.name}</span>
-      <span className="mt-1 block text-[11px] font-bold leading-tight text-[#8b806b]">
+      <span className="block text-[15px] font-black text-[var(--pancita-text-dark)]">{food.name}</span>
+      <span className="mt-1 block text-[12px] font-bold leading-tight text-[var(--pancita-text-muted)]">
         {food.description}
       </span>
     </motion.button>

@@ -16,15 +16,15 @@ export function RecipeCard({ recipe, featured = false }: RecipeCardProps) {
     <motion.div whileTap={{ scale: 0.985 }}>
       <Link
         className={cn(
-          "block overflow-hidden rounded-[28px] bg-white/84 shadow-[0_14px_32px_rgba(80,62,38,0.11)] ring-1 ring-white/70",
-          featured && "rounded-[32px]",
+          "block overflow-hidden rounded-[32px] bg-white shadow-[0_16px_40px_rgba(80,62,38,0.08)] ring-1 ring-white/60",
+          featured && "rounded-[36px]",
         )}
         href={`/cocina/${recipe.id}`}
       >
         <div
           className={cn(
-            "relative flex items-center justify-between p-4",
-            featured ? "min-h-[150px]" : "min-h-[112px]",
+            "relative flex items-center justify-between p-5",
+            featured ? "min-h-[160px]" : "min-h-[120px]",
           )}
           style={{ background: `linear-gradient(135deg, ${recipe.accent}, #fff8e8)` }}
         >

@@ -24,7 +24,7 @@ export default function RecipeDetailPage() {
 
   if (!recipe) {
     return (
-      <MobileShell className="bg-[#fff7e9]">
+      <MobileShell className="bg-[var(--pancita-cream)]">
         <AppHeader showBack title="Receta no disponible" />
         <AppCard className="text-center">
           <p className="text-sm font-bold leading-relaxed text-[#81745f]">
@@ -58,7 +58,7 @@ export default function RecipeDetailPage() {
   }
 
   return (
-    <MobileShell className="bg-[#fff7e9]">
+    <MobileShell className="bg-[var(--pancita-cream)] pb-24">
       <AppHeader
         action={
           <div className="flex gap-2">
@@ -97,10 +97,10 @@ export default function RecipeDetailPage() {
       </section>
 
       <section className="mb-5">
-        <span className="mb-3 inline-flex rounded-full bg-[#eef4d9] px-3 py-1 text-xs font-black text-[#617044]">
+        <span className="mb-3 inline-flex rounded-full bg-[var(--pancita-lavender)] px-3 py-1 text-xs font-black text-[var(--pancita-text-dark)]">
           {recipe.tag}
         </span>
-        <h1 className="text-[30px] font-black leading-tight text-[#39402b]">
+        <h1 className="text-[30px] font-black leading-tight text-[var(--pancita-text-dark)]">
           {recipe.title}
         </h1>
         <div className="mt-3 flex gap-2 text-xs font-black text-[#7f735f]">
@@ -113,7 +113,7 @@ export default function RecipeDetailPage() {
       </section>
 
       <AppCard>
-        <h2 className="mb-4 text-xl font-black text-[#3d432d]">Ingredientes</h2>
+        <h2 className="mb-4 text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Ingredientes</h2>
         <ul className="space-y-3">
           {recipe.ingredients.map((ingredient) => (
             <li
@@ -127,13 +127,15 @@ export default function RecipeDetailPage() {
         </ul>
       </AppCard>
 
-      <AppButton
-        className="mt-5 w-full"
-        onClick={() => router.push(`/cocina/${recipe.id}/pasos`)}
-        size="lg"
-      >
-        Comenzar receta
-      </AppButton>
+      <div className="fixed bottom-[max(12px,env(safe-area-inset-bottom))] left-1/2 z-40 w-[calc(100%-24px)] max-w-[406px] -translate-x-1/2 rounded-[34px] bg-white/80 p-2 shadow-[0_-10px_40px_rgba(111,127,67,0.1)] backdrop-blur-xl ring-1 ring-white">
+        <AppButton
+          className="w-full shadow-none"
+          onClick={() => router.push(`/cocina/${recipe.id}/pasos`)}
+          size="lg"
+        >
+          Comenzar receta
+        </AppButton>
+      </div>
     </MobileShell>
   );
 }

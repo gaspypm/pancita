@@ -5,7 +5,7 @@ export function AppCard({ className, ...props }: HTMLAttributes<HTMLDivElement>)
   return (
     <div
       className={cn(
-        "rounded-[28px] bg-white/78 p-5 shadow-[0_18px_42px_rgba(92,72,47,0.12)] ring-1 ring-white/65 backdrop-blur",
+        "rounded-[32px] bg-white p-5 shadow-[0_16px_40px_rgba(111,127,67,0.08)] ring-1 ring-white/60 backdrop-blur",
         className,
       )}
       {...props}

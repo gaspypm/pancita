@@ -20,7 +20,7 @@ export function MobileShell({ children, className }: MobileShellProps) {
       <div className="min-h-dvh bg-[#eadfca]">
         <main
           className={cn(
-            "relative mx-auto min-h-dvh w-full max-w-[430px] overflow-x-hidden bg-[#fff7e9] text-[#3d412d] shadow-[0_0_60px_rgba(65,48,30,0.14)]",
+            "relative mx-auto min-h-dvh w-full max-w-[430px] overflow-x-hidden bg-[var(--pancita-cream)] text-[var(--pancita-text-dark)] shadow-[0_0_60px_rgba(65,48,30,0.14)]",
             className,
           )}
         >

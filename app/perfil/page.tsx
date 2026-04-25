@@ -17,7 +17,7 @@ export default function PerfilPage() {
   const showToast = useAppStore((state) => state.showToast);
 
   return (
-    <MobileShell className="bg-[#fff7e9]">
+    <MobileShell className="bg-[var(--pancita-cream)]">
       <AppHeader
         action={
           <Link
@@ -47,12 +47,12 @@ export default function PerfilPage() {
             <Camera size={19} />
           </button>
         </div>
-        <h2 className="text-2xl font-black text-[#3d432d]">{user.name}</h2>
+        <h2 className="text-2xl font-black text-[var(--pancita-text-dark)] tracking-tight">{user.name}</h2>
         <p className="mt-1 text-sm font-bold text-[#81745f]">{user.email}</p>
       </AppCard>
 
       <section className="mb-5">
-        <h2 className="mb-3 text-xl font-black text-[#3d432d]">Datos personales</h2>
+        <h2 className="mb-3 text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Datos personales</h2>
         <div className="grid grid-cols-2 gap-3">
           <ProfileField label="Edad" value={user.age} />
           <ProfileField label="Sexo" value={user.sex} />
@@ -75,7 +75,7 @@ export default function PerfilPage() {
       </section>
 
       <AppCard>
-        <h2 className="text-xl font-black text-[#3d432d]">Tu meta diaria estimada</h2>
+        <h2 className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Tu meta diaria estimada</h2>
         <div className="mt-4 grid grid-cols-2 gap-3">
           <ProfileField
             className="bg-[#fff7e7]"

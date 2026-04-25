@@ -20,7 +20,7 @@ export function StatCard({
   const progress = progressPercent(current, target);
 
   return (
-    <div className="min-h-[122px] rounded-[24px] bg-white/82 p-4 shadow-[0_14px_30px_rgba(83,64,40,0.1)] ring-1 ring-white/70">
+    <div className="min-h-[122px] rounded-[32px] bg-white p-4 shadow-[0_16px_40px_rgba(111,127,67,0.08)] ring-1 ring-white/60">
       <div className="mb-3 flex items-center justify-between">
         <span
           className="grid size-10 place-items-center rounded-2xl text-xl"

@@ -41,7 +41,7 @@ export default function PersonalizacionPage() {
   );
 
   return (
-    <MobileShell className="bg-[#fff0f5]">
+    <MobileShell className="bg-[var(--pancita-pink-light)]">
       <AppHeader
         action={
           <div className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white/84 px-4 text-sm font-black text-[#9a6a24] shadow-[0_10px_24px_rgba(132,70,100,0.1)]">
@@ -63,7 +63,7 @@ export default function PersonalizacionPage() {
 
       <section>
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-xl font-black text-[#3d432d]">Accesorios</h2>
+          <h2 className="text-[22px] font-black text-[var(--pancita-text-dark)] tracking-tight">Accesorios</h2>
           <span className="rounded-full bg-white/76 px-3 py-1 text-xs font-black text-[#aa6f85]">
             {storeAccessories.length}
           </span>

@@ -28,20 +28,34 @@ export function BottomTabs() {
             pathname === tab.href ||
             (tab.href !== "/home" && pathname.startsWith(tab.href));
 
+          let activeBgClass = "bg-[var(--pancita-olive)] text-white";
+          let shadowClass = "shadow-[0_10px_20px_rgba(111,127,67,0.24)]";
+
+          if (tab.href === "/cocina") {
+            activeBgClass = "bg-[var(--pancita-lavender)] text-[#7b5ea7]";
+            shadowClass = "shadow-[0_10px_20px_rgba(243,234,251,0.5)]";
+          } else if (tab.href === "/personalizacion") {
+            activeBgClass = "bg-[var(--pancita-pink-light)] text-[#c55d78]";
+            shadowClass = "shadow-[0_10px_20px_rgba(253,232,236,0.5)]";
+          } else if (tab.href === "/diario") {
+            activeBgClass = "bg-[var(--pancita-green-light)] text-[#50661b]";
+            shadowClass = "shadow-[0_10px_20px_rgba(232,238,209,0.5)]";
+          }
+
           return (
             <Link
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex min-h-[58px] flex-col items-center justify-center gap-1 rounded-3xl text-[10px] font-black transition",
+                "relative flex min-h-[64px] flex-col items-center justify-center gap-1 rounded-[32px] text-[10px] font-black transition",
                 active
-                  ? "bg-[#6f7f43] text-white shadow-[0_10px_20px_rgba(111,127,67,0.24)]"
+                  ? cn(activeBgClass, shadowClass)
                   : "text-[#8b806b] active:bg-[#f1e7d7]",
               )}
               href={tab.href}
               key={tab.href}
             >
-              <Icon size={20} strokeWidth={active ? 2.8 : 2.2} />
-              <span className={tab.label.length > 9 ? "text-[9px]" : undefined}>
+              <Icon size={22} strokeWidth={active ? 2.8 : 2.2} className="z-10" />
+              <span className={cn("z-10", tab.label.length > 9 ? "text-[9px]" : undefined)}>
                 {tab.label}
               </span>
             </Link>
