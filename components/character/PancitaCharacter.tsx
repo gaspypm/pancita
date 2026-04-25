@@ -59,6 +59,21 @@ function PancitaModel({ emotion, selectedAccessories, chefMode }: PancitaRenderP
   );
 }
 
+function EmotionMotion({ emotion }: { emotion: Emotion }) {
+  const ref = useRef<THREE.Group>(null);
+  const config = emotionConfig[emotion];
+
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const elapsed = clock.getElapsedTime();
+    ref.current.position.y = Math.sin(elapsed * 1.7) * 0.03;
+    ref.current.rotation.z =
+      config.animation === "sad" ? Math.sin(elapsed) * -0.02 : Math.sin(elapsed) * 0.02;
+  });
+
+  return <group ref={ref} />;
+}
+
 function PancitaFallback2D({ emotion, selectedAccessories, chefMode }: PancitaRenderProps) {
   const config = emotionConfig[chefMode ? "motivada" : emotion];
   const isHappy = config.animation === "happy" || config.animation === "motivated";
