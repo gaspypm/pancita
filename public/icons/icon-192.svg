@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="Pancita">
+  <rect width="192" height="192" rx="48" fill="#fff7e9"/>
+  <circle cx="96" cy="103" r="56" fill="#efc79d"/>
+  <ellipse cx="96" cy="111" rx="43" ry="49" fill="#f4d4ac"/>
+  <circle cx="78" cy="93" r="6.5" fill="#302b24"/>
+  <circle cx="114" cy="93" r="6.5" fill="#302b24"/>
+  <circle cx="76" cy="109" r="7.5" fill="#eda6a0" opacity=".85"/>
+  <circle cx="116" cy="109" r="7.5" fill="#eda6a0" opacity=".85"/>
+  <ellipse cx="96" cy="113" rx="13" ry="4.8" fill="#4f392f"/>
+  <path d="M73 45c14-9 32-9 46 0" fill="none" stroke="#6f7f43" stroke-width="7" stroke-linecap="round"/>
+</svg>

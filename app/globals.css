@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff7e9;
+  --foreground: #3d412d;
+  --pancita-cream: #fff7e9;
+  --pancita-cream-strong: #f8ead8;
+  --pancita-olive: #6f7f43;
+  --pancita-olive-dark: #4f6030;
+  --pancita-yellow: #f5be58;
+  --pancita-pink: #ef9db5;
+  --pancita-lilac: #bca9d8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #fff7e9;
+  --color-foreground: #3d412d;
+  --font-sans: "Geist", "Geist Fallback", "Nunito", "Avenir Next", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #eadfca;
+  color-scheme: light;
+  overscroll-behavior-y: none;
 }
 
 body {
-  background: var(--background);
+  min-height: 100%;
+  margin: 0;
+  background: #eadfca;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Avenir Next", ui-sans-serif, system-ui,
+    sans-serif;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #dfe8b5;
+  color: #364024;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

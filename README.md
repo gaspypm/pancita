@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pancita
 
-## Getting Started
+Pancita is a mobile-first PWA habit and nutrition companion built with a warm, native-app feel. The MVP focuses on the polished frontend: mock login, daily nutrition overview, playful food logging, guided recipes, cosmetic personalization, profile settings, persisted client state, and a Three Fiber Pancita character fallback.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js App Router
+- React + TypeScript
+- Tailwind CSS
+- Zustand with localStorage persistence
+- React Three Fiber / Three.js for the Pancita character surface
+- Framer Motion for screen transitions and microinteractions
+- Web App Manifest metadata for PWA install support
+
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the local URL printed by Next.js, usually [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Current Limitations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Authentication is mocked. All login options enter the app as Diego.
+- Nutrition values, weekly summary, recipe recommendations, points, and profile data are local mock data.
+- State is persisted in `localStorage`, not a backend.
+- Profile setting screens save simple local preferences only.
+- No medical calculations or clinical advice are implemented.
 
-## Learn More
+## 3D Assets
 
-To learn more about Next.js, take a look at the following resources:
+The app is ready for real GLB assets. Until they exist, `PancitaScene` renders a Three.js geometry fallback.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Place the main model here:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```txt
+public/models/pancita.glb
+```
 
-## Deploy on Vercel
+Place accessory models here:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```txt
+public/models/accessories/beanie-verde.glb
+public/models/accessories/gorra-rosa.glb
+public/models/accessories/sombrero-pana.glb
+public/models/accessories/anteojos-redondos.glb
+public/models/accessories/panuelo-triangulo.glb
+public/models/accessories/auriculares-lila.glb
+public/models/accessories/piluso-smile.glb
+public/models/accessories/mochilita-mini.glb
+public/models/accessories/vincha-brote.glb
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## PWA Support
+
+PWA configuration lives in:
+
+- `app/manifest.ts`
+- `app/layout.tsx`
+- `public/icons/`
+
+The manifest uses `display: "standalone"`, Pancita app names, warm cream background color, olive theme color, portrait orientation, and placeholder install icons.
+
+## Main Workflows
+
+- First entry: `/login` stores a mock session and routes into `/home`.
+- Food logging: `/diario` lets the user tap or drag foods into Pancita, updates diary totals, emotion, and points.
+- Recipe discovery: `/cocina` shows Modo Chef recommendations and recipe cards.
+- Recipe completion: `/cocina/[recipeId]/pasos` guides seven steps and can add the recipe to the diary.
+- Personalization: `/personalizacion` supports buying, owning, equipping, and unequipping accessories.
+- Profile configuration: `/perfil` and `/perfil/configuracion` show user data, goals, settings, logout, and delete-confirmation UI.
