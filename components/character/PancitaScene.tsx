@@ -78,19 +78,28 @@ export function PancitaScene({
             style={{ background: sceneBackground }}
             transition={{ duration: 0.46, ease: "easeOut" }}
           >
-            <Canvas camera={{ position: [0, 0.2, 4.2], fov: 36 }}>
-              <ambientLight intensity={1.8} />
-              <directionalLight intensity={1.9} position={[2, 4, 3]} />
-              <pointLight color="#ffdca7" intensity={0.8} position={[-2, 1.4, 3]} />
-              <Suspense fallback={null}>
-                <PancitaCharacter
-                  chefMode={chefMode}
-                  emotion={activeEmotion}
-                  modelAvailable={modelAvailable}
-                  selectedAccessories={selectedAccessories}
-                />
-              </Suspense>
-            </Canvas>
+            {modelAvailable ? (
+              <Canvas camera={{ position: [0, 0.2, 4.2], fov: 36 }}>
+                <ambientLight intensity={1.8} />
+                <directionalLight intensity={1.9} position={[2, 4, 3]} />
+                <pointLight color="#ffdca7" intensity={0.8} position={[-2, 1.4, 3]} />
+                <Suspense fallback={null}>
+                  <PancitaCharacter
+                    chefMode={chefMode}
+                    emotion={activeEmotion}
+                    modelAvailable={modelAvailable}
+                    selectedAccessories={selectedAccessories}
+                  />
+                </Suspense>
+              </Canvas>
+            ) : (
+              <PancitaCharacter
+                chefMode={chefMode}
+                emotion={activeEmotion}
+                modelAvailable={modelAvailable}
+                selectedAccessories={selectedAccessories}
+              />
+            )}
             <AnimatePresence>
               {!modelAvailable ? (
                 <motion.span
@@ -99,7 +108,7 @@ export function PancitaScene({
                   exit={{ opacity: 0 }}
                   initial={{ opacity: 0 }}
                 >
-                  Vista previa 3D
+                  Vista 2.5D
                 </motion.span>
               ) : null}
             </AnimatePresence>
